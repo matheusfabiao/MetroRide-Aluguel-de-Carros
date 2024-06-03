@@ -1,0 +1,129 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/* CSS RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* VARIABLES */
+:root{
+    --accent: #5d50fa;
+    --black: #131313;
+    --white: #fff;
+    --gray: #f9f9f9;
+    --blue-gray: #f7f7fb;
+}
+
+/* GLOBAL STYLES */
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100dvh;
+}
+
+section{
+    min-width: 100%;
+    min-height: 100dvh;
+    color: var(--black);
+}
+
+/* NAVBAR */
+.navbar{
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--black);
+    background-color: var(--white);
+    padding: 30px 50px;
+    transition: all 0.1s ease-out;
+    filter: drop-shadow(5px 5px 10px transparent);
+}
+/* NAVBAR STICKY */
+.navbar.sticky{
+    background-color: var(--white);
+    filter: drop-shadow(5px 5px 10px rgba(194, 184, 255, 0.5));
+}
+/* NAVBAR BRAND */
+.brand{
+    transition: all ease-in-out 0.3s;
+    color: var(--black);
+}
+.brand:hover{
+    opacity: 0.8s;
+}
+.brand h1{
+    font-size: 32px;
+    font-weight: bold;
+}
+.accent{
+    color: var(--accent);
+}
+/* NAVBAR MENU */
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+}
+
+.menu a{
+    display: inline-block;
+    position: relative;
+    color: var(--black);
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.menu a::after{
+    color: var(--accent);
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    border-radius: 5px;
+    height: 0.1em;
+    bottom: 0;
+    left: 0;
+    background: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.menu a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+.btn{
+    color: var(--white);
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+.btn-2{
+    width: 160px;
+    height: 50px;
+    font-size: 20px;
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 12px;
+    color: var(--white);
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
+}
+.btn-2:hover{
+    background-color: var(--black);
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+}
